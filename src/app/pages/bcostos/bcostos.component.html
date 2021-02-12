@@ -1,0 +1,41 @@
+<div class="content-block">
+    <div class="dx-field">
+        <div class="dx-field-label">Selecciona una Base </div>
+        <div class="dx-field-value">
+            <dx-radio-group
+                    [items]="companies"
+                    (onValueChanged)="getacction($event)"
+                    [(value)]="items.VALOR1"
+                    layout="horizontal"
+                    >
+                    <div *dxTemplate="let companies of 'item'">
+                        <div>{{companies.VALOR2}}</div>
+                    </div>
+                   
+                </dx-radio-group>
+
+                 <div *ngIf="expression">
+                        <div class="tabpanel-item">
+                            <div>
+                                <p>
+                                    <b>{{company.VALOR2}}</b>
+                                    (<span>{{company.ID_GRUPO_DOMINIO}}</span>)
+                                </p>
+                                
+                            </div>
+                            <div>
+                                <p>
+                                    Acción: <b>{{company.VALOR3}}</b>
+                                </p>
+                                <p>
+                                    ID: <b>{{company.ID_DOMINIO}}</b>
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+
+    
+</div>
