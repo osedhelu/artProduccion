@@ -1,1 +1,36 @@
-<p>mano-obra works!</p>
+<dx-data-grid
+    id="gridContainer"
+    [dataSource]="datos"
+    [showBorders]="true">
+	
+	<dxo-editing mode="row" [allowAdding]="true" [allowUpdating]="true" [allowDeleting]="true">
+	</dxo-editing>
+<dxi-column
+	dataField="CODIGO"
+	caption="Identificador"
+></dxi-column>
+
+<dxi-column
+	dataField="DESCRIPCION"
+	caption="Descripción"
+></dxi-column>
+
+<dxi-column dataField="FECHA_DESDE" dataType="date" caption="Fecha desde">
+	<dxi-validation-rule type="required" message="The OrderDate field is required."></dxi-validation-rule>
+</dxi-column>
+<dxi-column
+	dataField="FECHA_HASTA"
+	dataType="date"
+	caption="Fecha hasta"
+><dxi-validation-rule type="required" message="The OrderDate field is required."></dxi-validation-rule>
+</dxi-column>
+<dxi-column
+	dataField="TIPO"
+	caption="Tipo valor"
+>
+</dxi-column>
+
+</dx-data-grid>
+
+
+<!-- [coumns]="['CODIGO', 'DESCRIPCION', 'ESTADO', 'FECHA_DESDE', 'HORAS_TURNO', 'ID_UN', 'TIPO', 'UNIDAD_MEDIDA', 'VALOR']" -->

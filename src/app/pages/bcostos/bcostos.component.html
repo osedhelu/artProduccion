@@ -5,7 +5,7 @@
             <dx-radio-group
                     [items]="companies"
                     (onValueChanged)="getacction($event)"
-                    [(value)]="items.VALOR1"
+                    [(value)]="items"
                     layout="horizontal"
                     >
                     <div *dxTemplate="let companies of 'item'">
@@ -18,17 +18,17 @@
                         <div class="tabpanel-item">
                             <div>
                                 <p>
-                                    <b>{{company.VALOR2}}</b>
-                                    (<span>{{company.ID_GRUPO_DOMINIO}}</span>)
+                                    <b>{{items.VALOR2}}</b>
+                                    (<span>{{items.ID_GRUPO_DOMINIO}}</span>)
                                 </p>
                                 
                             </div>
                             <div>
                                 <p>
-                                    Acción: <b>{{company.VALOR3}}</b>
+                                    Acción: <b>{{items.VALOR3}}</b>
                                 </p>
                                 <p>
-                                    ID: <b>{{company.ID_DOMINIO}}</b>
+                                    ID: <b>{{items.ID_DOMINIO}}</b>
                                 </p>
                                 
                             </div>

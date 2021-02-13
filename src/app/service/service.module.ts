@@ -3,7 +3,9 @@ import { CommonModule } from '@angular/common';
 import { CategoryService
   , ProductoService
   , LoginService
-, FnUserService } from "./service.index";
+  , FnUserService
+  , ProductionParametersService
+} from "./service.index";
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -18,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     , ProductoService
     , LoginService
     , FnUserService
+    , ProductionParametersService
   ]
 })
 export class ServiceModule { }
