@@ -1,10 +1,26 @@
+<dx-load-panel
+    [position]="loadPanelPosition"
+    [visible]="isLoading">
+</dx-load-panel>
 <dx-data-grid
     id="gridContainer"
     [dataSource]="datos"
-    [showBorders]="true">
+    [showBorders]="true"
+	(onRowInserted)="onInitNewRow($event)"
+	(onRowUpdating)="update($event)"
+	>
 	
-	<dxo-editing mode="row" [allowAdding]="true" [allowUpdating]="true" [allowDeleting]="true">
+	<dxo-editing  mode="row" 
+	[allowAdding]="true" 
+	[allowUpdating]="true" 
+	[allowDeleting]="true"
+	[confirmDelete]="false"
+	>
 	</dxo-editing>
+	<dxi-column caption="Opciones" type="buttons">
+        <dxi-button name="edit"></dxi-button>
+		<dxi-button name="delete"></dxi-button>
+    </dxi-column>
 <dxi-column
 	dataField="CODIGO"
 	caption="Identificador"
@@ -12,6 +28,7 @@
 
 <dxi-column
 	dataField="DESCRIPCION"
+	width="200"
 	caption="Descripción"
 ></dxi-column>
 
@@ -25,11 +42,29 @@
 ><dxi-validation-rule type="required" message="The OrderDate field is required."></dxi-validation-rule>
 </dxi-column>
 <dxi-column
+width="80"
 	dataField="TIPO"
 	caption="Tipo valor"
 >
+<dxo-lookup [dataSource]="seelctTipo"></dxo-lookup>
 </dxi-column>
-
+<dxi-column
+	dataField="VALOR"
+	
+	caption="Valor"
+></dxi-column>
+<dxi-column
+	dataField="UNIDAD_MEDIDA"
+	caption="UM">
+<dxo-lookup [dataSource]="SelectUm"  displayExpr="NOMBRE" valueExpr="NOMBRE"></dxo-lookup>
+</dxi-column>
+<dxi-column dataField="ESTADO" caption="Estado"  >
+	<dxo-lookup [dataSource]="seelctEstados" ></dxo-lookup>
+</dxi-column>
+<dxi-column dataField="HORAS_TURNO" dataType="number" caption="Horas Turno">  <dxo-format
+	type="fixedPoint"
+	[precision]="2">
+</dxo-format></dxi-column>
 </dx-data-grid>
 
 

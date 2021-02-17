@@ -23,4 +23,18 @@ export interface ManoObra {
 	VALOR: string;
 }
 
-
+export interface ClassCif {
+	BASE: string,
+	CLASE: string,
+	CODIGO: string,
+	DEFECTO: string,
+	DESCRIPCION: string,
+	ESTADO: string,
+	FECHA_DESDE: Date,
+	FECHA_HASTA: Date,
+	HORAS_TURNO: string,
+	ID_UN: string,
+	TIPO: string,
+	UNIDAD_MEDIDA: string,
+	VALOR: number
+}

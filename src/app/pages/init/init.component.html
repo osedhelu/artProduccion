@@ -1,7 +1,7 @@
 <ng-container *ngIf="isAutorized(); else notAuthorized">
     <app-side-nav-inner-toolbar title="{{appInfo.title}}">
-<h2 class="content-block">Home</h2>
-
+<h2 class="content-block">{{title}}</h2>
+        
         <router-outlet></router-outlet>
         <app-footer>
             Copyright © 2011-2019 Developer Express Inc.

@@ -23,4 +23,7 @@ export class FnUserService {
       ud_descticcion: des
     }).toPromise() 
   }
+
+
+ 
 }

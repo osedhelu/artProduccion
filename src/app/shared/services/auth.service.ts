@@ -5,7 +5,7 @@ import { LoginService } from 'src/app/service/service.index';
 import { fnLocal } from '../../_function/localStorage.fn';
 @Injectable()
 export class AuthService {
-  loggedIn = false;
+  loggedIn = true;
 
   constructor(
     private router: Router,
@@ -17,7 +17,7 @@ export class AuthService {
     }else {
       this.login.validateToken(user.token).then((resp: any) => {
         this.loggedIn = resp.ok;
-        this.router.navigate(['/']);
+        // this.router.navigate(['/']);
       }).catch(err => {
         this.loggedIn = false;
         console.log(err);

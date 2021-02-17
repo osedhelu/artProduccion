@@ -1,1 +1,36 @@
-<p>cif works!</p>
+<dx-load-panel
+    [position]="loadPanelPosition"
+    [visible]="isLoading">
+</dx-load-panel>
+<dx-data-grid
+    id="gridContainer"
+    [dataSource]="data"
+    [showBorders]="true"
+	(onRowInserted)="add($event)"
+	(onRowUpdating)="update($event)"
+	>
+    <dxo-editing  mode="row" 
+	[allowAdding]="true" 
+	[allowUpdating]="true" 
+	[allowDeleting]="true"
+	[confirmDelete]="false">
+	</dxo-editing>
+    <dxi-column caption="Opciones" type="buttons">
+        <dxi-button name="edit"></dxi-button>
+		<dxi-button name="delete"></dxi-button>
+    </dxi-column>
+	
+	
+	<dxi-column dataField="DEFECTO" caption="Valores por defecto"></dxi-column>
+	<dxi-column dataField="CODIGO" caption="Identificador"></dxi-column>
+	<dxi-column dataField="DESCRIPCION" caption="Descripción"></dxi-column>
+	<dxi-column dataField="FECHA_DESDE" caption="Fecha desde"></dxi-column>
+	<dxi-column dataField="FECHA_HASTA" caption="Fecha hasta"></dxi-column>
+	<dxi-column dataField="TIPO" caption="Tipo valor"></dxi-column>
+	<dxi-column dataField="VALOR" caption="Valor"></dxi-column>
+	<dxi-column dataField="BASE" caption="Base"></dxi-column>
+	<dxi-column dataField="ESTADO" caption="Estado"></dxi-column>
+
+
+
+</dx-data-grid>

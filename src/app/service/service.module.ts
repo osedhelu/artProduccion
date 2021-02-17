@@ -5,6 +5,7 @@ import { CategoryService
   , LoginService
   , FnUserService
   , ProductionParametersService
+  , ServiciosService
 } from "./service.index";
 import { HttpClientModule } from '@angular/common/http';
 
@@ -21,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     , LoginService
     , FnUserService
     , ProductionParametersService
+    , ServiciosService
   ]
 })
 export class ServiceModule { }

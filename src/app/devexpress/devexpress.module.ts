@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DxDataGridModule, DxFormModule, DxTreeListModule, DxListModule, DxDrawerModule, DxToolbarModule, DxScrollViewModule, DxSelectBoxModule, DxTemplateModule, DxTabPanelModule, DxTabsModule, DxRadioGroupModule } from 'devextreme-angular';
+import { DxDataGridModule, DxFormModule, DxTreeListModule, DxListModule, DxDrawerModule, DxToolbarModule, DxScrollViewModule, DxSelectBoxModule, DxTemplateModule, DxTabPanelModule, DxTabsModule, DxRadioGroupModule, DxLoadPanelModule, DxChartModule } from 'devextreme-angular';
 import { DxButtonModule } from 'devextreme-angular/ui/button';
 import { DxCheckBoxModule } from 'devextreme-angular/ui/check-box';
 import { DxTextBoxModule } from 'devextreme-angular/ui/text-box';
@@ -32,6 +32,8 @@ import { BrowserModule } from '@angular/platform-browser';
     , DxTabPanelModule
     ,DxTabsModule
     ,DxRadioGroupModule
+    ,DxLoadPanelModule
+    , DxChartModule
   ],
   exports: [
     CommonModule
@@ -54,6 +56,8 @@ import { BrowserModule } from '@angular/platform-browser';
     , DxTabPanelModule
     , DxTabsModule
     ,DxRadioGroupModule
+    ,DxLoadPanelModule
+    , DxChartModule
   ]
 })
 export class DevexpressModule { }

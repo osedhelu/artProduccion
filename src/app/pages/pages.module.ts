@@ -32,6 +32,7 @@ const routes: Routes = [
       },
       {
         path: 'dashboard',
+        data:{title: 'Dashboard'},
         component: HomeComponent,
         canActivate: [ AuthGuardService ]
       },
@@ -53,21 +54,25 @@ const routes: Routes = [
       {
         path: 'Bcostos',
         component: BCostosComponent,
+        data:{title: 'Bases del Costo'},
         canActivate: [ AuthGuardService ]
       },
       {
         path: 'ManoObra',
+        data:{title: 'Mano de Obra'},
         component: ManoObraComponent,
         canActivate: [ AuthGuardService ]
       },
       {
         path: 'cif',
+        data: {title:'CIF'},
         component: CifComponent,
         canActivate: [ AuthGuardService ]
       },
       {
         path: 'secciones',
         component: SeccionesComponent,
+        data: {title: 'Secciones'},
         canActivate: [ AuthGuardService ]
       },
       {
