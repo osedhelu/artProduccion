@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductionParametersService } from 'src/app/service/service.index';
 import { ManoObra } from '../../_class/bcosto.class'
-import {socketIo} from 'socket.io-client';
 @Component({
   selector: 'app-mano-obra',
   templateUrl: './mano-obra.component.html',

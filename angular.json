@@ -47,7 +47,10 @@
               "devextreme-angular",
               "devextreme",
               "devexpress-richedit",
-              "x-data-spreadsheet"
+              "x-data-spreadsheet",
+              "socket.io-client",
+              "debug",
+              "socket.io-parser"
             ],
             "outputPath": "dist/devEnkanta",
             "index": "src/index.html",

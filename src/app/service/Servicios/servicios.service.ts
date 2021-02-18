@@ -3,15 +3,15 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { env } from '../../config/env';
-import io from 'socket.io-client';
+import { Socket } from 'ngx-socket-io';
 @Injectable({
   providedIn: 'root'
 })
 export class ServiciosService {
-  socket: any;
-  url = 'http://osedhelu.ml'
-  constructor(private http: HttpClient) { 
-    this.socket = io(this.url);
+  
+  constructor(
+    private http: HttpClient, 
+    private socket: Socket) { 
   }
 
   getServicios() {

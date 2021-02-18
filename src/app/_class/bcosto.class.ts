@@ -38,3 +38,19 @@ export interface ClassCif {
 	UNIDAD_MEDIDA: string,
 	VALOR: number
 }
+
+export interface ClassSecciones {
+	ANTERIOR: string
+	ASIGNABLE: string
+	DESCRIPCION: string
+	ESTADO: string
+	ID_SECCION: string
+	ID_UN: string
+	ID_UN_ITEM: string
+	INVENTARIO: string
+	ITEM: string
+	MANO_OBRA: string
+	MSG: string
+	TIPO: string
+	items: ClassSecciones[]
+}

@@ -1,1 +1,16 @@
-<p>secciones works!</p>
+<dx-tree-list
+    id="employees"
+    [dataSource]="seccionesEmpresa"
+    itemsExpr="items"
+    dataStructure="tree"
+    [showRowLines]="true"
+    [showBorders]="true"
+    [columnAutoWidth]="true"
+    [expandedRowKeys]="[1]">
+    <dxi-column dataField="ID_SECCION" caption="Position"></dxi-column>
+    <dxi-column dataField="DESCRIPCION"></dxi-column>
+    <!-- <dxi-column dataField="City"></dxi-column>
+    <dxi-column dataField="State"></dxi-column>
+    <dxi-column dataField="Mobile_Phone"></dxi-column>
+    <dxi-column dataField="Hire_Date" dataType="date"></dxi-column> -->
+</dx-tree-list>

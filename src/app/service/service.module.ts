@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SocketIoModule, SocketIoConfig  } from 'ngx-socket-io';
+import { env } from '../config/env';
 import { CategoryService
   , ProductoService
   , LoginService
@@ -8,13 +10,15 @@ import { CategoryService
   , ServiciosService
 } from "./service.index";
 import { HttpClientModule } from '@angular/common/http';
-
+import { AuthGuardService } from '../shared/services';
+const config: SocketIoConfig = { url: env.socket, options: {} };
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
-    HttpClientModule
+    CommonModule
+    , HttpClientModule
+    , SocketIoModule.forRoot(config)
   ], 
   providers: [
     CategoryService
@@ -23,6 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     , FnUserService
     , ProductionParametersService
     , ServiciosService
+    , AuthGuardService
+
   ]
 })
 export class ServiceModule { }
