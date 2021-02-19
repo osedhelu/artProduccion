@@ -15,7 +15,7 @@ export class InitComponent  {
   }
   title:string = '';
   constructor(
-    private authService: AuthService
+      private authService: AuthService
     , private screen: ScreenService
     , public appInfo: AppInfoService
     , private router: Router) {this.getTitlePagina() }

@@ -1,16 +1,120 @@
-<dx-tree-list
-    id="employees"
-    [dataSource]="seccionesEmpresa"
-    itemsExpr="items"
-    dataStructure="tree"
-    [showRowLines]="true"
-    [showBorders]="true"
-    [columnAutoWidth]="true"
-    [expandedRowKeys]="[1]">
-    <dxi-column dataField="ID_SECCION" caption="Position"></dxi-column>
-    <dxi-column dataField="DESCRIPCION"></dxi-column>
-    <!-- <dxi-column dataField="City"></dxi-column>
-    <dxi-column dataField="State"></dxi-column>
-    <dxi-column dataField="Mobile_Phone"></dxi-column>
-    <dxi-column dataField="Hire_Date" dataType="date"></dxi-column> -->
-</dx-tree-list>
+<div id="page">
+    <dx-responsive-box>
+        <dxi-row [ratio]="1"></dxi-row>
+        <dxi-row [ratio]="3"></dxi-row>
+        <dxi-row [ratio]="0.7"></dxi-row>
+        <dxi-col [ratio]="5" screen="md lg"></dxi-col>
+        
+        <dxi-col [ratio]="6" screen="md lg"></dxi-col>
+     
+    
+     
+        <dxi-item class="content">
+            <dxi-location screen="md lg" [row]="1" [col]="1"></dxi-location>
+            <dxi-location screen="xs sm" [row]="1" [col]="0"></dxi-location>
+            <div class="widget-container" style="padding-left: 30px; padding-top: 12px;">
+                <div>Informacion Unidad</div>
+                <!-- <dx-select-box #company
+                    displayExpr="Name"
+                    [(dataSource)]="companies"
+                    [value]="companies[0]"></dx-select-box> -->
+                <dx-form  id="form"
+                    [formData]="Empresa"
+                    readOnly="false"
+                    showColonAfterLabel="true"
+                    labelLocation="top"
+                    minColWidth="300"
+                    colCount="2"
+                    >
+                        <dxi-item disabled="true" dataField="ITEM"></dxi-item>
+                        <dxi-item disabled="true" dataField="ID_SECCION"></dxi-item>
+                        <dxi-item disabled="true" dataField="DESCRIPCION"></dxi-item>
+                        <dxi-item disabled="true" dataField="ANTERIOR" caption="Seccion Padre"> </dxi-item>
+                        <dxi-item disabled="true" dataField="ESTADO"></dxi-item>
+                    
+                        <dxi-item
+                        disabled="true"
+                        dataField="INVENTARIO" 
+                        editorType="dxCheckBox">
+                    </dxi-item>
+                    <dxi-item
+                    disabled="true"
+                        dataField="MANO_OBRA" 
+                        editorType="dxCheckBox">
+                    </dxi-item>
+                    <dxi-item
+                    disabled="true"
+                        dataField="ASIGNABLE" 
+                        caption="Seccion Padre"
+                        editorType="dxCheckBox">
+                    </dxi-item>
+                        <dxi-item itemType="group" 
+                        [editorOptions]="{ height: 90 }" 
+                        [colSpan]="2"    
+                        caption="Empleados Por Seccion">
+                            <dxi-item itemType="tabbed">
+                                <dxo-tab-panel-options [deferRendering]="false">
+                                </dxo-tab-panel-options>
+                                <dxi-tab title="Phone">
+                                    <dxi-item dataField="Phone"></dxi-item>
+                                </dxi-tab>
+                                <dxi-tab title="Skype">
+                                    <dxi-item dataField="Skype"></dxi-item>
+                                </dxi-tab>
+                                <dxi-tab title="Email">
+                                    <dxi-item dataField="Email"></dxi-item>
+                                </dxi-tab>
+                            </dxi-item>
+                        </dxi-item>
+                </dx-form>
+            </div>
+           
+            
+        </dxi-item>
+     
+        <dxi-item class="left-side-bar">
+            
+        
+            <dxi-location screen="md lg" [row]="1" [col]="0"></dxi-location>
+            <dx-tree-list
+            id="employees"
+            [dataSource]="seccionesEmpresa"
+            itemsExpr="items"
+            dataStructure="tree"
+            [showRowLines]="true"
+            [showBorders]="true"
+            
+            [columnAutoWidth]="true"
+            [focusedRowEnabled]="true"
+            (onRowClick)="SelectRow($event)"
+            keyExpr="ITEM">
+            
+    <dxo-search-panel [visible]="true" width="250"></dxo-search-panel>
+    <!-- <dxo-column-chooser [enabled]="true"></dxo-column-chooser> -->
+            <dxi-column dataField="ID_SECCION" caption="Position"></dxi-column>
+            <dxi-column dataField="DESCRIPCION"></dxi-column>
+        </dx-tree-list>
+        </dxi-item>
+     
+     
+     
+      
+    </dx-responsive-box>
+</div>
+
+
+
+
+<dx-responsive-box>
+    <dxi-row [ratio]="1">
+        
+    </dxi-row>
+    <dxi-row [ratio]="2" [shrink]="2"></dxi-row>
+    <dxi-row [ratio]="0.7"></dxi-row>
+    <dxi-col [ratio]="2" [shrink]="0.5">
+       
+    </dxi-col>
+    <!-- The following columns appear on medium and large screens only -->
+    <dxi-col [ratio]="2" screen="md lg"></dxi-col>
+    <dxi-col [ratio]="0.5" screen="md lg"></dxi-col>
+</dx-responsive-box>
