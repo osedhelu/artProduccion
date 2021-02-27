@@ -52,19 +52,12 @@
                         [editorOptions]="{ height: 90 }" 
                         [colSpan]="2"    
                         caption="Empleados Por Seccion">
-                            <dxi-item itemType="tabbed">
-                                <dxo-tab-panel-options [deferRendering]="false">
-                                </dxo-tab-panel-options>
-                                <dxi-tab title="Phone">
-                                    <dxi-item dataField="Phone"></dxi-item>
-                                </dxi-tab>
-                                <dxi-tab title="Skype">
-                                    <dxi-item dataField="Skype"></dxi-item>
-                                </dxi-tab>
-                                <dxi-tab title="Email">
-                                    <dxi-item dataField="Email"></dxi-item>
-                                </dxi-tab>
-                            </dxi-item>
+                        <dx-data-grid
+                        id="gridContainer"
+                        [dataSource]="Empleados"
+                        [columns]="['ID_EMPLEADO', 'NOMBRE']"
+                        [showBorders]="true">
+                    </dx-data-grid>
                         </dxi-item>
                 </dx-form>
             </div>
@@ -77,7 +70,7 @@
         
             <dxi-location screen="md lg" [row]="1" [col]="0"></dxi-location>
             <dx-tree-list
-            id="employees"
+            id="treeListSeccion"
             [dataSource]="seccionesEmpresa"
             itemsExpr="items"
             dataStructure="tree"
@@ -88,11 +81,11 @@
             [focusedRowEnabled]="true"
             (onRowClick)="SelectRow($event)"
             keyExpr="ITEM">
-            
+            <dxo-column-fixing [enabled]="true"></dxo-column-fixing>
     <dxo-search-panel [visible]="true" width="250"></dxo-search-panel>
     <!-- <dxo-column-chooser [enabled]="true"></dxo-column-chooser> -->
-            <dxi-column dataField="ID_SECCION" caption="Position"></dxi-column>
-            <dxi-column dataField="DESCRIPCION"></dxi-column>
+            <dxi-column [fixed]="true" fixedPosition="left" dataField="ID_SECCION" caption="Position"></dxi-column>
+            <dxi-column [fixed]="true" fixedPosition="left" dataField="DESCRIPCION"></dxi-column>
         </dx-tree-list>
         </dxi-item>
      

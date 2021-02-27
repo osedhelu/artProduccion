@@ -22,6 +22,15 @@ export class ServiciosService {
   }
 
 
+  getEmpleados(id_seccion) {
+    let url = `${env.url1}/seccion/empleado/${id_seccion}`;
+    return this.http.get(url).toPromise()
+    
+    // pipe(
+    //   map((resp: any) => resp.data),
+    //   catchError(err => throwError(err)))
+  }
+
    listen(EventName: string) {
       return new Observable((subscriber) => {
         this.socket.on(EventName, (data) => {

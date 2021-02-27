@@ -8,6 +8,8 @@ import { CategoryService
   , FnUserService
   , ProductionParametersService
   , ServiciosService
+  , EmpleadosService
+  , MaquiEquipoService
 } from "./service.index";
 import { HttpClientModule } from '@angular/common/http';
 import { AuthGuardService } from '../shared/services';
@@ -28,6 +30,8 @@ const config: SocketIoConfig = { url: env.socket, options: {} };
     , ProductionParametersService
     , ServiciosService
     , AuthGuardService
+    , EmpleadosService
+    , MaquiEquipoService
 
   ]
 })

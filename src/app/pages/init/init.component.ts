@@ -18,17 +18,10 @@ export class InitComponent  {
       private authService: AuthService
     , private screen: ScreenService
     , public appInfo: AppInfoService
-    , private router: Router) {this.getTitlePagina() }
+    , private router: Router) { }
 
   isAutorized() {
     return this.authService.isLoggedIn;
   }
 
-  getTitlePagina() {
-    this.router.events.pipe(
-      filter(event => event instanceof ActivationEnd),
-      filter(event => (event as ActivationEnd).snapshot.firstChild === null),
-      map(event => (event as ActivationEnd).snapshot.data)
-    ).subscribe(children => this.title = children.title) 
-  }
 }

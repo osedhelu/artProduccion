@@ -54,3 +54,11 @@ export interface ClassSecciones {
 	TIPO: string
 	items: ClassSecciones[]
 }
+export interface ClassEmpleados {
+	ID_EMPLEADO: string
+	ID_SECCION: string
+	ID_UN: string 
+	ITEM: number
+	NOMBRE: string
+	TIPO: string
+}

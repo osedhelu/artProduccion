@@ -6,7 +6,11 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { DisplayDataComponent } from './display-data/display-data.component';
 import { InitComponent } from './init/init.component';
-import { SideNavOuterToolbarModule, SideNavInnerToolbarModule, SingleCardModule } from '../layouts';
+import { 
+  SideNavOuterToolbarModule
+  , SideNavInnerToolbarModule
+  , SingleCardModule 
+} from '../layouts';
 import { BrowserModule } from '@angular/platform-browser';
 import { CategoriasComponent } from './categorias/categorias.component';
 import { ProductoComponent } from './producto/producto.component';
@@ -16,10 +20,15 @@ import { BCostosComponent } from './bcostos/bcostos.component';
 import { ManoObraComponent } from './mano-obra/mano-obra.component';
 import { CifComponent } from './cif/cif.component';
 import { SeccionesComponent } from './secciones/secciones.component';
+import { EmpleadosComponent } from './empleados/empleados.component';
+import { MaquiEquipoComponent } from './maqui-equipo/maqui-equipo.component';
+import { RutasProduccionComponent } from './rutas-produccion/rutas-produccion.component';
+import { MatrizComponent } from './matriz/matriz.component';
 const routes: Routes = [
   {
-    path: '', component: InitComponent,
-    children:[
+      path: ''
+    , component: InitComponent
+    , children:[
       {
         path: 'display-data',
         component: DisplayDataComponent,
@@ -76,26 +85,55 @@ const routes: Routes = [
         canActivate: [ AuthGuardService ]
       },
       {
+        path: 'SeccionEmpleados',
+        component: EmpleadosComponent,
+        data: {title: 'Empleados Secciones'},
+        canActivate: [ AuthGuardService ]
+      },
+      {
+        path: 'MaquinaEquipo',
+        component: MaquiEquipoComponent,
+        data: {title: 'Maquinaria y Equipo'},
+        canActivate: [ AuthGuardService ]
+      },
+      {
+        path: 'rutaproduccion',
+        component: RutasProduccionComponent,
+        data: {title: 'Rutas de Producción'},
+        canActivate: [ AuthGuardService ]
+      },
+      {
+        path: 'matriz',
+        component: MatrizComponent,
+        data: {title: 'Rutas de Producción'},
+        canActivate: [ AuthGuardService ]
+      },
+      {
+        path: 'matriz',
+        component: MatrizComponent,
+        data: {title: 'Rutas de Producción'},
+        canActivate: [ AuthGuardService ]
+      },
+      {
         path: '**',
         redirectTo: 'dashboard',
         canActivate: [ AuthGuardService ]
       }
     ]
   }
-  
 ];
 
 @NgModule({
   imports: [
-    SideNavOuterToolbarModule,
-    SideNavInnerToolbarModule,
-    SingleCardModule,
-    FooterModule,
-    BrowserModule,
-    LoginFormModule,
-    RouterModule.forChild(routes), 
-    DevexpressModule,
-    ServiceModule,
+    SideNavOuterToolbarModule
+    , SideNavInnerToolbarModule
+    , SingleCardModule
+    , FooterModule
+    , BrowserModule
+    , LoginFormModule
+    , RouterModule.forChild(routes)
+    , DevexpressModule
+    , ServiceModule
   ],
 providers: [AuthGuardService],
   exports: [RouterModule],
@@ -109,6 +147,11 @@ providers: [AuthGuardService],
     , BCostosComponent
     , ManoObraComponent
     , CifComponent
-    , SeccionesComponent]
+    , SeccionesComponent
+    , EmpleadosComponent
+    , MaquiEquipoComponent
+    , RutasProduccionComponent
+    , MatrizComponent
+  ]
 })
 export class PagesModule { }

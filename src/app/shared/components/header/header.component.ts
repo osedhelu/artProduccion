@@ -4,8 +4,9 @@ import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services';
 import { UserPanelModule } from '../user-panel/user-panel.component';
 
-import { Router } from '@angular/router';
+import { ActivationEnd, Router } from '@angular/router';
 import { DevexpressModule } from 'src/app/devexpress/devexpress.module';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -20,7 +21,6 @@ export class HeaderComponent {
   @Input()
   menuToggleEnabled = false;
 
-  @Input()
   title: string;
 
   userMenuItems = [{
@@ -38,10 +38,19 @@ export class HeaderComponent {
     }
   }];
 
-  constructor(private authService: AuthService, public router: Router) { }
+  constructor(private authService: AuthService, public router: Router) {
+    this.getTitlePagina()
+   }
 
   toggleMenu = () => {
     this.menuToggle.emit();
+  }
+  getTitlePagina() {
+    this.router.events.pipe(
+      filter(event => event instanceof ActivationEnd),
+      filter(event => (event as ActivationEnd).snapshot.firstChild === null),
+      map(event => (event as ActivationEnd).snapshot.data)
+    ).subscribe(children => this.title = children.title) 
   }
 }
 

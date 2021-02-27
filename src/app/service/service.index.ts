@@ -3,4 +3,6 @@ export { CategoryService } from "./category/category.service";
 export { LoginService } from "./login/login.service";
 export { FnUserService } from './user/fn-user.service';
 export { ProductionParametersService } from './productionParameters/production-parameters.service';
-export { ServiciosService } from './Servicios/servicios.service';
+export { ServiciosService } from './Servicios/servicios.service'; 
+export { EmpleadosService } from './empleados/empleados.service';
+export { MaquiEquipoService } from './maqui-equipo/maqui-equipo.service';

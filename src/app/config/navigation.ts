@@ -30,16 +30,18 @@ export const navigation = [
   },
   {
     text: 'Empleados Secciones',
-    icon: 'group'
+    icon: 'group',
+    path: '/SeccionEmpleados'
   },
   {
     text: 'Maquinaria y Equipo',
     icon: 'columnchooser',
-
+    path: '/MaquinaEquipo'
   },
   {
     text: 'Rutas de producción',
-    icon: 'columnfield'
+    icon: 'columnfield',
+    path: 'rutaproduccion'
   },
   {
     text: 'Matriz de componentes',

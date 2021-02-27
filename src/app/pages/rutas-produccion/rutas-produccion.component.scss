@@ -1,0 +1,25 @@
+.box-item {
+	text-align: center;
+     margin-top: 20px;
+    /* padding-top: 20px; */
+    /* margin-left: 34px !important; */
+    margin-right: 34px !important;
+    /* font-size: 16px; */
+    box-shadow: rgb(0 0 0 / 24%) -11px -2px 20px 1px;
+	border-radius: 9px;
+	cursor: pointer;
+}
+
+.box-item:hover {
+	width: 70px  !important;
+}
+
+
+.blue { background: #08AEEA }
+.green { background: #17ef8c }
+.yellow { background: #f6be65 }
+.pulp { background: #caaffc }
+
+::ng-deep #scrollView {
+    height: 56px !important;
+}
