@@ -40,6 +40,10 @@ export class BCostosComponent implements OnInit {
       , e.value.VALOR3).then((resp:any) => {
         notify(`Actualizar ${resp.data[0].DESCRIPCION}`, "success", 2000);
       })
+      .catch(err => {
+        console.log(err);
+        
+      })
     
   }
 }

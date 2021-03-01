@@ -10,17 +10,11 @@
 	(onRowUpdating)="update($event)"
 	>
 	
-	<dxo-editing  mode="row" 
-	[allowAdding]="true" 
-	[allowUpdating]="true" 
-	[allowDeleting]="true"
-	[confirmDelete]="false"
-	>
-	</dxo-editing>
-	<dxi-column caption="Opciones" type="buttons">
-        <dxi-button name="edit"></dxi-button>
-		<dxi-button name="delete"></dxi-button>
-    </dxi-column>
+	<dxo-selection mode="single"></dxo-selection>
+    <dxo-paging [enabled]="false"></dxo-paging>
+    <dxo-editing mode="popup">
+        <dxo-texts confirmDeleteMessage=""></dxo-texts>
+    </dxo-editing>
 <dxi-column
 	dataField="CODIGO"
 	caption="Identificador"

@@ -24,6 +24,7 @@ import { EmpleadosComponent } from './empleados/empleados.component';
 import { MaquiEquipoComponent } from './maqui-equipo/maqui-equipo.component';
 import { RutasProduccionComponent } from './rutas-produccion/rutas-produccion.component';
 import { MatrizComponent } from './matriz/matriz.component';
+import { SharedModule } from '../shared/shared.module';
 const routes: Routes = [
   {
       path: ''
@@ -134,6 +135,7 @@ const routes: Routes = [
     , RouterModule.forChild(routes)
     , DevexpressModule
     , ServiceModule
+    , SharedModule
   ],
 providers: [AuthGuardService],
   exports: [RouterModule],

@@ -41,6 +41,10 @@ export class ManoObraComponent implements OnInit {
   update(e) {
     console.log(e);
   }
+
+  selectedChanged(e){
+    console.log(e.component.getRowIndexByKey(e.selectedRowKeys[0]));
+  }
   // initSocket(){
   //   const socket = socketIo('http://192.168.10.11:6001')
   //   socket.on('hello', (resp => {

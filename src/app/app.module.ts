@@ -6,7 +6,6 @@ import { RootComponent } from './root/root.component';
 import { NopagefoundComponent } from './shared/nopagefound/nopagefound.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PagesModule } from './pages/pages.module';
-import { CrudNavigationComponent } from './shared/crud-navigation/crud-navigation.component';
 
 
 const appRoutes: Routes = [
@@ -19,7 +18,6 @@ const appRoutes: Routes = [
   declarations: [
     RootComponent,
     NopagefoundComponent,
-    CrudNavigationComponent
   ],
   imports: [
 BrowserModule,

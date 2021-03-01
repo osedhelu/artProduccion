@@ -19,10 +19,10 @@ export class AuthService {
         this.loggedIn = resp.ok;
         // this.router.navigate(['/']);
       }).catch(err => {
+        
         this.loggedIn = false;
         this.router.navigate(['/login'])
         console.log(err);
-        
         fnLocal.remove('token')
       })
       

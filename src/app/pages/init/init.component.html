@@ -1,17 +1,21 @@
 <ng-container *ngIf="isAutorized(); else notAuthorized">
     <app-side-nav-inner-toolbar title="{{appInfo.title}}">
-        
+        <app-navigation-crud></app-navigation-crud>
         <router-outlet></router-outlet>
         <app-footer>
             Copyright © 2011-2019 Developer Express Inc.
-            <br/>
+            <br />
             All trademarks or registered trademarks are property of their respective owners.
         </app-footer>
     </app-side-nav-inner-toolbar>
 </ng-container>
 
+
+
 <ng-template #notAuthorized>
+   
     <app-single-card>
+       
         <router-outlet></router-outlet>
     </app-single-card>
 </ng-template>

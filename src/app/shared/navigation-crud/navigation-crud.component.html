@@ -1,1 +1,21 @@
-<p>navigation-crud works!</p>
+
+
+<dx-speed-dial-action
+    icon="add"
+    [index]="1"
+    (onClick)="addRow()">
+</dx-speed-dial-action>
+<dx-speed-dial-action
+    icon="trash"
+    label="Eliminar"
+    [index]="2"
+    [visible]="selectedRowIndex !== -1"
+    (onClick)="deleteRow()">
+</dx-speed-dial-action>
+<dx-speed-dial-action 
+    icon="edit"
+    label="Editar"
+    [index]="3"
+    [visible]="selectedRowIndex !== -1"
+    (onClick)="editRow()">
+</dx-speed-dial-action>
